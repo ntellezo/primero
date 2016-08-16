@@ -1,0 +1,26 @@
+/** 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edad;
+import java.util.Scanner;
+/**
+ *
+ * @author nto12
+ */
+public class Edad {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Ingrese su edad ");
+        int edadingresada = Integer.parseInt(reader.nextLine());
+        if (edadingresada>0 && edadingresada<114)
+            System.out.println("Es posible tener esa edad ") ;
+        else
+            System.out.println("Es imposible tener esa edad");
+    }
+}
