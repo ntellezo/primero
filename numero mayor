@@ -1,0 +1,27 @@
+package numero.mayor;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author nto12
+ */
+public class NumeroMayor {
+
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        int numeroMayor =0;
+        System.out.println("Ingresa el primer numero: " );
+    int numero1 = Integer.parseInt(reader.nextLine());      
+        System.out.println("Ingresa el segundo numero: " );
+        int numero2 = Integer.parseInt(reader.nextLine());
+        if (numero1 < numero2)
+            numeroMayor = numero2;
+        else 
+            numeroMayor = numero1; 
+        
+        System.out.println( "El numero mayor es " + numeroMayor);
+        
+    }
+}
+    
