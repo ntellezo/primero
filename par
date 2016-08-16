@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package par.o.impar;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author nto12
+ */
+public class ParOImpar {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int modulo = 0;
+        Scanner reader = new Scanner (System.in);
+        System.out.println("Ingrese su numero: ");
+        int numeroingresado = Integer.parseInt(reader.nextLine()); 
+        modulo = numeroingresado%2;
+        if (modulo != 0)
+            System.out.println("El numero es impar");
+        else
+            System.out.println("El numero es par");
+    }
+}
+    
+
