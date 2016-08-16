@@ -1,0 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package contrasena;
+import java.util.Scanner;
+/**
+ *
+ * @author nto12
+ */
+public class Contrasena {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        boolean logico = false;
+        while (logico == false) {
+        System.out.println("Ingrese su contraseña");
+        String contrasena1 = reader.nextLine();
+       
+            if (contrasena1.equals("programacion"))
+                {System.out.println("La palabra secreta es jdk");
+                logico = true;}
+            else
+                System.out.println("Su clave es incorrecta"); 
+                
+        }
+    }       
+}
