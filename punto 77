@@ -1,0 +1,87 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package punto77;
+
+/**
+ *
+ * @author nto12
+ */
+public class Punto77 {
+    
+    public static void main (String[] args){
+         LyyraCard PekkaCard = new LyyraCard(20);
+         LyyraCard BrianCard = new LyyraCard(30);
+         PekkaCard.payGourmet();
+         BrianCard.payEconomical();
+         System.out.println("Pekka:  " + PekkaCard);
+         System.out.println("Brian:  " + BrianCard);
+         PekkaCard.loadMoney(20);
+         BrianCard.payGourmet();
+         System.out.println("Pekka:  " + PekkaCard);
+         System.out.println("Brian:  " + BrianCard);
+         PekkaCard.payEconomical();
+         PekkaCard.payEconomical();
+         BrianCard.loadMoney(50);
+         System.out.println("Pekka:  " + PekkaCard);
+         System.out.println("Brian:  " + BrianCard); 
+         
+    }
+    
+}
+    
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package punto77;
+
+/**
+ *
+ * @author nto12
+ */
+public class LyyraCard
+{
+    private double balanceInicial;
+    
+    public LyyraCard (double pBalanceInicial)
+    {
+        balanceInicial = pBalanceInicial;
+    }
+    public String toString ()
+    {
+        return "La tarjeta tiene "  + balanceInicial + " euros";
+    }
+    public void payEconomical ()
+    {
+        if (balanceInicial - 2.5 > 0)
+        {
+            balanceInicial = balanceInicial - 2.5;
+        }
+        
+    }
+    public void payGourmet ()
+    {
+        if ( balanceInicial - 4.00 > 0)
+        {
+            balanceInicial = balanceInicial - 4.00;
+        }
+    }
+    public void loadMoney (double amount)
+    {
+        if (amount > 0)
+        {
+        if (balanceInicial+amount >= 150)
+        {
+            balanceInicial = 150;
+        }
+        else
+        {
+            balanceInicial = balanceInicial + amount;
+        }
+        }
+    }
+}
