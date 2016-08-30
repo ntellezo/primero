@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package chapterfour;
+
+/**
+ *
+ * @author jorgecamargo
+ */
+public class Student {
+    String name;
+    double gpa;
+    Professor advisor;
+    
+    public Student(String name){
+        this.name = name;
+        advisor = new Professor("Jorge Camargo","Computer Science");
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public String getAdvisorsDepartment() {
+               return advisor.getDepartment();  // a String expression
+    }
+    public void setProfessor (String name, String Department){
+        this.advisor.setName(name);
+        this.advisor.setName (Department);
+    }
+    public void setGpa(double gpa){
+        this.gpa = gpa;
+    }
+    public void setName(String name){
+        this.name= name;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Student s = new Student("Juan Pérez");
+        
+        System.out.println("Student name: " + s.getName() 
+                + ", Advisor department: " + s.getAdvisorsDepartment());
+        
+    }
+}
