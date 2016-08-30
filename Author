@@ -1,0 +1,93 @@
+package excersise1;
+import java.util.Scanner;
+    
+        
+/**
+ *
+ * @author nto12
+ */
+public class Excersise1 {
+    
+    private Author camila ;
+    private String tittle;
+    private int noOfPages;
+    private boolean fiction;
+    
+    public Excersise1 (String name,int age,String tittle, int noOfPages, boolean fiction){
+        camila= new Author(name, age);
+        this.tittle = tittle;
+        this.noOfPages = noOfPages;
+        this.fiction = fiction;
+    }
+    public Author getAuthor (){
+        return camila;
+    }
+    public void setAuthor(String name, int age){
+        this.camila.setname(name);
+        this.camila.setage(age);        
+    }
+    public void setTittle(String tittle) {
+        this.tittle = tittle;
+    }
+    public String getTittle(){
+        return tittle;
+    }
+    public void setNoOfPages(int pages){
+        this.noOfPages = pages;
+    }
+    public int getNoOfPages (){
+        return noOfPages;
+    }
+    public void setFiction( boolean fiction){
+        this.fiction= fiction;
+    }
+    public boolean getFiction (){
+        return fiction;
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner reader = new Scanner (System.in);
+        String name = reader.nextLine ();
+        int age = Integer.parseInt (reader.nextLine ());
+        
+    }
+    
+}
+
+
+CLASE aUTHOR
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excersise1;
+
+/**
+ *
+ * @author nto12
+ */
+public class Author {
+    private String name;
+    private int age;
+    
+    public Author (String pname,int page){
+        this.name = pname;
+        this.age = page;
+    }
+    public String getName (){
+        return name;
+    }
+    public void setname (String pname){
+        this.name = pname;
+    }
+    public int getage(){
+        return age;
+    }
+    public void setage (int page){
+        this.age = page;
+    }
+}
