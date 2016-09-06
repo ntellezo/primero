@@ -1,0 +1,123 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package liga;
+
+/**
+ *
+ * @author nto12
+ */
+public class Liga {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        team barcelona = new team("FC Barcelona");
+
+        player brian = new player("Brian");
+        player pekka = new player("Pekka", 39);
+        barcelona.addPlayer(brian);
+        barcelona.addPlayer(pekka);
+        barcelona.addPlayer(new player("Mikael", 1)); // works similarly as the above
+
+        System.out.println("Total goals: " + barcelona.allgoals());
+
+    }
+    
+}
+
+To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package liga;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author nto12
+ */
+public class team {
+    private String name;
+    private int size;
+    private ArrayList<player> players;
+    private int maxsize;
+    private int goals;
+    
+            
+    public team (String name){
+        this.name= name;
+        this.players= new ArrayList<player>();
+        this.size= 0;
+        this.maxsize=16;
+    }
+    
+    public String getName(){
+    return name;
+    }
+    public void addPlayer(player nicolas){
+        if (size<maxsize){
+            players.add(nicolas);
+            this.size ++;
+        }
+    }
+    public int getSize(){
+        return size;
+    }
+    public String printPlayers (){
+        String namesplayers = "";
+        for (player actual : this.players){
+            namesplayers +=" " + actual + "\n";
+        }
+        return namesplayers;
+    }
+    public void maxium(int maxsize){
+        this.maxsize=maxsize ;
+    }
+    
+    public int allgoals(){
+        int moment =0;
+        for (player actual: this.players){
+            moment += actual.getgoals();
+        }
+        return moment; 
+    }
+           
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package liga;
+
+/**
+ *
+ * @author nto12
+ */
+public class player {
+    String name;
+    int goals;
+    
+    public player (String name, int goals){
+        this.name=name;
+        this.goals= goals;
+    }
+    public player (String name){
+        this.name=name;
+    }
+    public String getName(){
+        return name;
+    }
+    public int getgoals(){
+        return goals;
+    }
+    public String toString (){
+        return name + ", goals " + goals;
+    }
+}
