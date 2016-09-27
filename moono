@@ -1,0 +1,153 @@
+Clase ToBeStored
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tobestored;
+
+/**
+ *
+ * @author nto12
+ */
+public class ToBeStored {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Box box = new Box(10);
+
+        box.add( new Book("Fedor Dostojevski", "Crime and Punishment", 2) ) ;
+        box.add( new Book("Robert Martin", "Clean Code", 1) );
+        box.add( new Book("Kent Beck", "Test Driven Development", 0.7) );
+
+        box.add( new CD("Pink Floyd", "Dark Side of the Moon", 1973) );
+        box.add( new CD("Wigwam", "Nuclear Nightclub", 1975) );
+        box.add( new CD("Rendezvous Park", "Closer to Being Here", 2012) );
+
+        System.out.println( box );
+    }
+    
+}
+
+
+Clase Box
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tobestored;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author nto12
+ */
+public class Box {
+    private ArrayList things;
+    private double weigth;
+    private double max;
+    
+    public Box(double max)
+    {
+        this.max=max;
+        things = new ArrayList();
+    }
+    public void add (Book book)
+    {
+        if(weigth + book.getWeight()< this.max)
+            {
+                things.add(book);
+                weigth += book.getWeight();
+            }
+    }
+    public void add (CD book)
+    {
+        if(weigth + book.getWeight()< this.max)
+            {
+                things.add(book);
+                weigth += book.getWeight();
+            }        
+    }
+    public String toString()
+    {
+        return "Box: "+things.size()+" things, total weight "+weigth+" kg";
+    }
+}
+
+
+CLase Book
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tobestored;
+
+/**
+ *
+ * @author nto12
+ */
+public class Book {
+    private String writer;
+    private String name;
+    private double weight;
+    
+    public Book (String writer, String name, double weight)
+            {
+                this.writer = writer;
+                this.name = name;
+                this.weight = weight; 
+            }
+    public double getWeight ()
+    {
+        return weight;
+    }
+    public String toString()
+    {
+        return writer + ": " + name;
+    }
+}
+
+
+Clase CD
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tobestored;
+
+/**
+ *
+ * @author nto12
+ */
+public class CD {
+    private String artist;
+    private String title;
+    private int year;
+    private double weight;
+    
+    public CD(String artist, String title, int year)
+    {
+        this.artist = artist;
+        this.title =title;
+        this.year = year;
+        this.weight = 0.1;
+    }
+    public double getWeight ()
+    {
+        return weight;
+    }
+    public String toString()
+    {
+        return artist +": "+ title + " ("+year+")";
+    }
+    
+}
