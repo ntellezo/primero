@@ -1,0 +1,5 @@
+package tobestored;
+
+    public interface ToBeStored {
+    double weight();
+}  
