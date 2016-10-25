@@ -1,0 +1,30 @@
+package tobestored;
+import java.util.ArrayList;
+public class Box implements ToBeStored{
+    private final ArrayList<ToBeStored> things;
+    private final double maximumWeight;
+    
+    public Box(double maximumWeight){
+        this.maximumWeight = maximumWeight;
+        this.things = new ArrayList<>();
+    }
+    
+    public void add(ToBeStored t){
+        if(this.weight() + t.weight() < maximumWeight){
+            this.things.add(t);
+        }
+    }
+    
+    public double weight(){
+        double weight = 0;
+        for(ToBeStored t : this.things){
+            weight += t.weight();
+        }
+        return weight;
+    }
+    
+    
+    public String toString(){
+        return "Box: " + this.things.size() + " things, total weight " + this.weight() + " kg";
+    }
+}
