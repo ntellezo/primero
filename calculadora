@@ -1,0 +1,31 @@
+
+package myexitbotton;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class MyExitButton extends JButton {
+public MyExitButton() {
+// Craft the two-line label.
+this.setLayout(new GridLayout(2, 1));
+this.add(new JLabel("Push Me", JLabel.CENTER));
+
+this.setBackground(Color.MAGENTA);
+// Program its behavior.
+ActionListener l = new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+int optionChosen = JOptionPane.showConfirmDialog(
+null,
+"Are you sure you want to exit?",
+"Exit?",
+JOptionPane.YES_NO_OPTION,
+JOptionPane.QUESTION_MESSAGE);
+if (optionChosen == 0) { 
+System.exit(0);
+}
+
+}
+};
+this.addActionListener(l);
+}
+}
